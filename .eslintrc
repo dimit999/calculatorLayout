@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": ["airbnb/base"],
+    "rules": {
+    "semi": "error",
+        "no-console": "off",
+        "no-path-concat": "off",
+        "eol-last": "off", // чтобы не ругалось на отсутствие пустой строки в конце "max-lines": ["error", 150, { "ignoreUrls": true }], // игнорить урлы
+        "no-tabs": "off", //чтобы не ругалось на оступы
+        "no-alert": "off",
+        "prefer-destructuring": "off", // чтобы не просило диструктурировать
+        "indent":  ["off", "tab"], //чтобы не проверялось какие проблемы или табы идут
+        //"indent":  [2, "tab"] //разрешает два пробела
+        //"indent":  [2, "tab", {}] доп параметры
+        "no-param-reassign": "off", //можно переопределять переменные
+        "no-shadow": "off",
+        "no-use-before-define": "off",
+        "camelcase": "off",
+        "no-undef": "off",
+        "no-restricted-syntax": "off",
+        "no-mixed-operators": [
+            "error",
+            {
+                "groups": [
+                    ["+", "-", "*", "/", "%", "**"],
+                    ["&", "|", "^", "~", "<<", ">>", ">>>"],
+                    ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+                    ["&&", "||"],
+                    ["in", "instanceof"]
+                ],
+                "allowSamePrecedence": true
+            }
+        ]
+    }
+}
