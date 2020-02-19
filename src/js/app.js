@@ -4,7 +4,7 @@ const DATA = {
   price: [4000, 8000, 26000],
   desktopTemplates: [50, 40, 30],
   adapt: 20,
-  mobiletemplates: 15,
+  mobileTemplates: 15,
   editable: 10,
   metrikaYandex: [500, 1000, 2000],
   analyticsGoogle: [850, 1350, 3000],
@@ -22,6 +22,11 @@ const endButton = document.querySelector('.end-button');
 const blockTotal = document.querySelector('.total');
 const fastRange = document.querySelector('.fast-range');
 const totalPriceSum = document.querySelector('.total_price__sum');
+const adaptBtn = document.getElementById('adapt');
+const mobileDevices = document.getElementById('mobileTemplates');
+
+// Default view
+mobileDevices.disabled = true;
 
 // Function
 function showElements(elem) {
@@ -101,3 +106,14 @@ endButton.addEventListener('click', () => {
 });
 
 formCalculate.addEventListener('change', handlerCallBackForm);
+
+adaptBtn.addEventListener('change', disableMobileDevices);
+
+function disableMobileDevices() {
+  if (mobileDevices.disabled === false) {
+    mobileDevices.disabled = true;
+  } else {
+    mobileDevices.disabled = false;
+    mobileDevices.checked = false;
+  }
+}
